@@ -5,7 +5,7 @@ namespace App\Providers;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Passport\Passport;
-use Domain\Auth\Enums\UserTypeEnum;
+use Turbine\Auth\Enums\UserTypeEnum;
 
 class AuthServiceProvider extends ServiceProvider
 {

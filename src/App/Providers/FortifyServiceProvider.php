@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Fortify\Fortify;
-use Domain\Auth\Actions\CreateNewUser;
-use Domain\Auth\Actions\ResetUserPassword;
-use Domain\Auth\Actions\UpdateUserPassword;
-use Domain\Auth\Actions\UpdateUserProfileInformation;
+use Turbine\Auth\Actions\CreateNewUser;
+use Turbine\Auth\Actions\ResetUserPassword;
+use Turbine\Auth\Actions\UpdateUserPassword;
+use Turbine\Auth\Actions\UpdateUserProfileInformation;
 
 class FortifyServiceProvider extends ServiceProvider
 {
