@@ -71,7 +71,7 @@ clean_build:
 	rm -rf $(BUILD_DIR)
 
 clean_git:
-	git reset --hard && it clean -df
+	git reset --hard && git clean -df
 
 clean:
 	$(MAKE) clean_build
