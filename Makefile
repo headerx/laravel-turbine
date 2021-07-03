@@ -1,11 +1,19 @@
+#!make
+
+-include .env
+
 .PHONY: test share build
 
-PHP := php
-COMPOSER := composer
-INSTALL_CMD := laravel new
+SHELL := /bin/bash
+PHP := vendor/bin/sail
+COMPOSER := vendor/bin/sail composer
 PHPUNIT := vendor/bin/phpunit
 
 APP_NAME=laravel-turbine
+
+DOWNLOAD_CMD := curl -s https://laravel.build/$(APP_NAME)
+
+INSTALL_CMD = $(SHELL) installer.bash
 
 BUILD_DIR := $(APP_NAME)
 
@@ -13,13 +21,22 @@ test:
 	cd $(BUILD_DIR) && $(PHPUNIT)
 
 share:
-	cd $(BUILD_DIR) && ngrok http "localhost:8000"
+	ngrok http "localhost:8000"
+
+define NEWLINE
+
+endef
+
+download_installer:
+	$(shell cat .env > installer.bash)
+	$(shell echo $(NEWLINE) >> installer.bash)
+	$(DOWNLOAD_CMD) >> installer.bash
 
 build:
-	$(INSTALL_CMD) $(APP_NAME)
+	$(INSTALL_CMD)
 	cp dependencies.txt $(BUILD_DIR)
 	cp -prv .github $(BUILD_DIR)
-	cd $(BUILD_DIR); \
+	cd $(BUILD_DIR); $(PHP) up -d; \
 	for pkg in $(shell cat dependencies.txt);\
 		do $(COMPOSER) require $${pkg}; \
 		done; \
@@ -41,6 +58,21 @@ build:
 		$(PHP) artisan vendor:publish --provider="HeaderX\BukuIcons\BukuIconsServiceProvider"; \
 		$(PHP) artisan vendor:publish --provider="HeaderX\AdminerPlugin\AdminerPluginServiceProvider" --tag="adminer-plugins-config"; \
 		$(PHP) artisan vendor:publish --tag=impersonate; \
-		$(PHP) artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+		$(PHP) artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"; \
+		$(PHP) artisan jetstream:install livewire; \
+		$(PHP) artisan passport:install --uuids
 
 default: test
+
+list_dependencies:
+	composer show --name-only -D > dependencies.txt
+
+clean_build:
+	rm -rf $(BUILD_DIR)
+
+clean_git:
+	git reset --hard && it clean -df
+
+clean:
+	$(MAKE) clean_build
+	$(MAKE) clean_git
