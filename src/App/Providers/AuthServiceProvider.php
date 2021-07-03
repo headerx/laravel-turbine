@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use Laravel\Passport\Passport;
+use Domain\Auth\Enums\UserTypeEnum;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -25,6 +27,30 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        // Implicitly grant "Admin" role all permissions
+        // This works in the app by using gate-related functions like auth()->user->can() and @can()
+        Gate::before(function ($user) {
+            return $user->hasAllAccess();
+        });
+
+        Gate::define('is_admin', function ($user = null) {
+            return $user->type === UserTypeEnum::admin();
+        });
+
+        Passport::routes();
+
+        Passport::tokensCan([
+            'create' => 'Create resources',
+            'read' => 'Read Resources',
+            'update' => 'Update Resources',
+            'delete' => 'Delete Resources',
+        ]);
+
+        Passport::setDefaultScope([
+            // 'create',
+            'read',
+            // 'update',
+            // 'delete',
+        ]);
     }
 }
