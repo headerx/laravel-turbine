@@ -36,7 +36,7 @@ build:
 	$(INSTALL_CMD)
 	cp dependencies.txt $(BUILD_DIR)
 	cp -prv .github $(BUILD_DIR)
-	cd $(BUILD_DIR); $(PHP) up -d; \
+	cd $(BUILD_DIR); $(PHP) down; $(PHP) up -d; \
 	for pkg in $(shell cat dependencies.txt);\
 		do $(COMPOSER) require $${pkg}; \
 		done; \
