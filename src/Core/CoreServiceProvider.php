@@ -8,7 +8,7 @@ use Core\Console\Commands\CoreConsoleMakeCommand;
 use Core\Console\Commands\CoreControllerMakeCommand;
 use Core\Console\Commands\CoreModelMakeCommand;
 
-class MegalithServiceProvider extends ServiceProvider
+class CoreServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap services.
