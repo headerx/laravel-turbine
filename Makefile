@@ -73,6 +73,11 @@ clean_build:
 clean_git:
 	git reset --hard && git clean -df
 
+clean_deps:
+	rm -rf vendor
+	rm -rf node_modules
+
 clean:
 	$(MAKE) clean_build
 	$(MAKE) clean_git
+	$(MAKE) clean_deps
