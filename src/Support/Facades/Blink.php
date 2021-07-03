@@ -3,7 +3,7 @@
 namespace Support\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use Support\Blink as CoreBlink;
+use Support\Blink as TurbineBlink;
 
 /**
  * @method static mixed|\Spatie\Blink\Blink store($name = 'default')
@@ -14,6 +14,6 @@ class Blink extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return CoreBlink::class;
+        return TurbineBlink::class;
     }
 }
