@@ -1,4 +1,4 @@
-.PHONY: test share
+.PHONY: test share build
 
 PHP := php
 COMPOSER := composer
