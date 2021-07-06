@@ -7,10 +7,10 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
+use Spatie\Enum\Laravel\Rules\EnumRule;
 use Turbine\Auth\Enums\UserTypeEnum;
 use Turbine\Auth\Events\User\UserUpdated;
 use Turbine\Auth\Models\User;
-use Spatie\Enum\Laravel\Rules\EnumRule;
 use Validator;
 
 class UpdateUserAction
