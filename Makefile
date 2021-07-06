@@ -43,6 +43,7 @@ build:
 
 install:
 	$(MAKE) build
+	cd $(BUILD_DIR); \
 	$(PHP) artisan jetstream:install livewire; \
 	$(PHP) artisan vendor:publish --tag=jetstream-views -n; \
 	$(PHP) artisan vendor:publish --tag=passport-migrations -n; \
@@ -65,7 +66,7 @@ install:
 	$(PHP) artisan jetstream:install livewire; \
 	$(PHP) artisan jetstream-passport:install
 
-default: test
+default: download_installer
 
 list_dependencies:
 	composer show --name-only -D > dependencies.txt
