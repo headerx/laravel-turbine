@@ -4,7 +4,7 @@ namespace Turbine\Auth\Actions;
 
 use Turbine\Auth\Events\Role\RoleDeleted;
 use Turbine\Auth\Models\Role;
-use Turbine\xceptions\GeneralException;
+use Turbine\Exceptions\GeneralException;
 
 class DeleteRoleAction
 {

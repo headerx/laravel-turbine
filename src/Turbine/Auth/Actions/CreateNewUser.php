@@ -4,8 +4,8 @@ namespace Turbine\Auth\Actions;
 
 use DB;
 use Exception;
-use Illuminate\Turbine\Facades\Auth;
-use Illuminate\Turbine\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Jetstream\Jetstream;

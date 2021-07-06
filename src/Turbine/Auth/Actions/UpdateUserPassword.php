@@ -2,8 +2,8 @@
 
 namespace Turbine\Auth\Actions;
 
-use Illuminate\Turbine\Facades\Hash;
-use Illuminate\Turbine\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use LangleyFoxall\LaravelNISTPasswordRules\PasswordRules;
 use Laravel\Fortify\Contracts\UpdatesUserPasswords;
 

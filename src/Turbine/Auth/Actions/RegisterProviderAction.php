@@ -4,9 +4,9 @@ namespace Turbine\Auth\Actions;
 
 use Exception;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Turbine\Facades\DB;
+use Illuminate\Support\Facades\DB;
 use Turbine\Auth\Models\User;
-use Turbine\xceptions\GeneralException;
+use Turbine\Exceptions\GeneralException;
 
 class RegisterProviderAction
 {

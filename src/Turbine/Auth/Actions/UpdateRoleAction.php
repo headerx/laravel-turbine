@@ -4,13 +4,13 @@ namespace Turbine\Auth\Actions;
 
 use DB;
 use Exception;
-use Illuminate\Turbine\Facades\Log;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
 use Turbine\Auth\Enums\UserTypeEnum;
 use Turbine\Auth\Events\Role\RoleUpdated;
 use Turbine\Auth\Models\Role;
 use Spatie\Enum\Laravel\Rules\EnumRule;
-use Turbine\xceptions\GeneralException;
+use Turbine\Exceptions\GeneralException;
 use Validator;
 
 class UpdateRoleAction

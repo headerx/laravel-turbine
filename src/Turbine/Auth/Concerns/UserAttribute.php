@@ -2,7 +2,7 @@
 
 namespace Turbine\Auth\Concerns;
 
-use Illuminate\Turbine\Facades\Hash;
+use Illuminate\Support\Facades\Hash;
 
 /**
  * Trait UserAttribute.

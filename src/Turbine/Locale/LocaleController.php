@@ -1,6 +1,6 @@
 <?php
 
-namespace Turbine\ocale;
+namespace Turbine\Locale;
 
 /**
  * Class LocaleController.

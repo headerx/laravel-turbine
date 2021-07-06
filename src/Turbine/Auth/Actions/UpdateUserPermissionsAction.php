@@ -2,7 +2,7 @@
 
 namespace Turbine\Auth\Actions;
 
-use Illuminate\Turbine\Facades\Validator;
+use Illuminate\Support\Facades\Validator;
 use Turbine\Auth\Models\User;
 
 class UpdateUserPermissionsAction

@@ -9,7 +9,7 @@ use Turbine\Auth\Enums\UserTypeEnum;
 use Turbine\Auth\Events\Role\RoleCreated;
 use Turbine\Auth\Models\Role;
 use Spatie\Enum\Laravel\Rules\EnumRule;
-use Turbine\xceptions\GeneralException;
+use Turbine\Exceptions\GeneralException;
 use Validator;
 
 class CreateRoleAction

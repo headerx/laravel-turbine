@@ -3,8 +3,8 @@
 namespace Turbine\Auth\Actions;
 
 use Exception;
-use Illuminate\Turbine\Facades\DB;
-use Illuminate\Turbine\Facades\Log;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
 use Turbine\Auth\Enums\UserTypeEnum;
