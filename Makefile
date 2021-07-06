@@ -38,7 +38,7 @@ build:
 	cp -prv .github $(BUILD_DIR)
 	cd $(BUILD_DIR); $(PHP) down; $(PHP) up -d; \
 	for pkg in $(shell cat dependencies.txt);\
-		do $(COMPOSER) require $${pkg}; \
+		do $(COMPOSER) require $${pkg} --no-interaction; \
 		done; \
 		$(PHP) artisan jetstream:install livewire; \
 		$(PHP) artisan vendor:publish --tag=jetstream-views -n; \
