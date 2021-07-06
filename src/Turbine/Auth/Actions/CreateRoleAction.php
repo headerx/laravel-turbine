@@ -5,10 +5,10 @@ namespace Turbine\Auth\Actions;
 use DB;
 use Exception;
 use Illuminate\Validation\Rule;
+use Spatie\Enum\Laravel\Rules\EnumRule;
 use Turbine\Auth\Enums\UserTypeEnum;
 use Turbine\Auth\Events\Role\RoleCreated;
 use Turbine\Auth\Models\Role;
-use Spatie\Enum\Laravel\Rules\EnumRule;
 use Turbine\Exceptions\GeneralException;
 use Validator;
 
