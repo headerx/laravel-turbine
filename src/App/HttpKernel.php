@@ -37,11 +37,17 @@ class HttpKernel extends Kernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \Turbine\Auth\Http\Middleware\ToBeLoggedOut::class,
+            \Turbine\Auth\Http\Middleware\CheckIfActive::class,
         ],
 
         'api' => [
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        ],
+        'admin' => [
+            'auth',
+            'is_admin',
         ],
         'adminer' => [
             \App\Http\Middleware\EncryptCookies::class,
@@ -51,9 +57,10 @@ class HttpKernel extends Kernel
             // you may create customized middleware to fit your needs
             // example uses Laravel default authentication (default protection)
             \Illuminate\Auth\Middleware\Authenticate::class,
+            \Turbine\Auth\Http\Middleware\AdminCheck::class,
+            \Turbine\Auth\Http\Middleware\SuperAdminCheck::class,
             \Illuminate\Routing\Middleware\ThrottleRequests::class,
             \Illuminate\Auth\Middleware\RequirePassword::class,
-            'password.confirm',
         ],
     ];
 
@@ -74,5 +81,10 @@ class HttpKernel extends Kernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'type' => \Turbine\Auth\Http\Middleware\UserTypeCheck::class,
+        'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
+        'is_admin' => \Turbine\Auth\Http\Middleware\AdminCheck::class,
+        'has_menu' => \Turbine\Menus\Http\Middleware\MenuCheck::class,
+        'is_super_admin' => \Turbine\Auth\Http\Middleware\SuperAdminCheck::class,
     ];
 }
