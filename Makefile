@@ -17,12 +17,6 @@ INSTALL_CMD = $(SHELL) installer.bash
 
 BUILD_DIR := $(APP_NAME)
 
-test:
-	cd $(BUILD_DIR) && $(PHPUNIT)
-
-share:
-	ngrok http "localhost:8000"
-
 define NEWLINE
 
 endef
@@ -31,6 +25,12 @@ download_installer:
 	$(shell cat .env > installer.bash)
 	$(shell echo $(NEWLINE) >> installer.bash)
 	$(DOWNLOAD_CMD) >> installer.bash
+
+test:
+	cd $(BUILD_DIR) && $(PHPUNIT)
+
+share:
+	ngrok http "localhost:8000"
 
 build:
 	$(INSTALL_CMD)
