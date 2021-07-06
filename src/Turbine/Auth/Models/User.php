@@ -12,7 +12,7 @@ use Lab404\Impersonate\Models\Impersonate;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Passport\HasApiTokens;
-use Megalith\Menus\Concerns\HasMenuItems;
+use Turbine\Menus\Concerns\HasMenuItems;
 use Spatie\Permission\Traits\HasRoles;
 use Turbine\Auth\Concerns\GetsAuthConnection;
 use Turbine\Auth\Concerns\HasPermissionsLabel;
@@ -32,7 +32,7 @@ class User extends Authenticatable
     use HasChildren;
     use HasApiTokens;
     use HasFactory;
-    use HasMenuItems;
+    // use HasMenuItems;
     use HasPermissionsLabel;
     use HasProfilePhoto;
     use HasRoles;
