@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use Database\Seeders\AuthSeeder;
 use Illuminate\Auth\Middleware\RequirePassword;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
@@ -19,7 +20,7 @@ abstract class TestCase extends BaseTestCase
     {
         parent::setUp();
 
-        Artisan::call('db:seed');
+        Artisan::call('db:seed', ['--class' => AuthSeeder::class]);
 
         $this->withoutMiddleware(RequirePassword::class);
     }
@@ -36,7 +37,7 @@ abstract class TestCase extends BaseTestCase
 
     protected function loginAsAdmin($admin = false)
     {
-        if (! $admin) {
+        if (!$admin) {
             $admin = $this->getMasterAdmin();
         }
 
