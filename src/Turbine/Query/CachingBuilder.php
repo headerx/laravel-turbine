@@ -1,6 +1,6 @@
 <?php
 
-namespace Support\Query;
+namespace Turbine\Query;
 
 use Cache;
 use Illuminate\Database\Query\Builder as QueryBuilder;

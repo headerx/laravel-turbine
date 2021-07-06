@@ -6,8 +6,8 @@ use Turbine\Auth\Concerns\GetsAuthConnection;
 use Turbine\Auth\Concerns\PermissionRelationship;
 use Turbine\Auth\QueryBuilders\PermissionQueryBuilder;
 use Spatie\Permission\Models\Permission as SpatiePermission;
-use Support\Concerns\CachesQueries;
-use Support\Concerns\HasUuid;
+use Turbine\Concerns\CachesQueries;
+use Turbine\Concerns\HasUuid;
 use Wildside\Userstamps\Userstamps;
 
 class Permission extends SpatiePermission

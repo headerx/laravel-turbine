@@ -1,6 +1,6 @@
 <?php
 
-namespace Support\Concerns;
+namespace Turbine\Concerns;
 
 use Illuminate\Events\Dispatcher;
 use Illuminate\Support\Str;

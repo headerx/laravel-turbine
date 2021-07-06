@@ -9,8 +9,8 @@ use Turbine\Auth\Concerns\HasPermissionsLabel;
 use Turbine\Auth\Enums\UserTypeEnum;
 use Megalith\Menus\Concerns\HasMenuItems;
 use Spatie\Permission\Models\Role as SpatieRole;
-use Support\Concerns\CachesQueries;
-use Support\Concerns\HasUuid;
+use Turbine\Concerns\CachesQueries;
+use Turbine\Concerns\HasUuid;
 use Wildside\Userstamps\Userstamps;
 
 /**

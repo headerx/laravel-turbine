@@ -1,6 +1,6 @@
 <?php
 
-namespace Support\Exceptions;
+namespace Turbine\xceptions;
 
 use Exception;
 use Throwable;

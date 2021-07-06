@@ -60,7 +60,7 @@ build:
 		$(PHP) artisan vendor:publish --tag=impersonate; \
 		$(PHP) artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"; \
 		$(PHP) artisan jetstream:install livewire; \
-		$(PHP) artisan passport:install --uuids
+		$(PHP) artisan jetstream-passport:install
 
 default: test
 

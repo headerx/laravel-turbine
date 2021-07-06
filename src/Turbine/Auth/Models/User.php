@@ -21,9 +21,9 @@ use Turbine\Auth\Enums\UserTypeEnum;
 use Turbine\Auth\QueryBuilders\UserQueryBuilder;
 use Megalith\Menus\Concerns\HasMenuItems;
 use Spatie\Permission\Traits\HasRoles;
-use Support\Concerns\CachesQueries;
-use Support\Concerns\HasChildren;
-use Support\Concerns\HasUuid;
+use Turbine\Concerns\CachesQueries;
+use Turbine\Concerns\HasChildren;
+use Turbine\Concerns\HasUuid;
 use Wildside\Userstamps\Userstamps;
 
 class User extends Authenticatable

@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Gate;
+use Illuminate\Turbine\Facades\Gate;
 use Laravel\Passport\Passport;
 use Turbine\Auth\Enums\UserTypeEnum;
 

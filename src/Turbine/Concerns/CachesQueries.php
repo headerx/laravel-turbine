@@ -1,7 +1,7 @@
 <?php
-namespace Support\Concerns;
+namespace Turbine\Concerns;
 
-use Support\Query\CachingBuilder;
+use Turbine\Query\CachingBuilder;
 
 trait CachesQueries
 {

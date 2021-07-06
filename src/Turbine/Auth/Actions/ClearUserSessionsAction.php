@@ -3,11 +3,11 @@
 namespace Turbine\Auth\Actions;
 
 use Exception;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Turbine\Facades\Auth;
+use Illuminate\Turbine\Facades\DB;
 use Turbine\Auth\Events\User\UserUpdated;
 use Turbine\Auth\Models\User;
-use Support\Exceptions\GeneralException;
+use Turbine\xceptions\GeneralException;
 
 class ClearUserSessionsAction
 {

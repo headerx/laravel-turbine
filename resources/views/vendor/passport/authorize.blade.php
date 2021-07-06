@@ -1,1 +1,1 @@
-@include('core.api.authorize')
+@include('jetstream-passport::authorize')

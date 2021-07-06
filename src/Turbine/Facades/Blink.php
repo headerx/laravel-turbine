@@ -1,8 +1,8 @@
 <?php
 
-namespace Support\Facades;
+namespace Turbine\Facades;
 
-use Illuminate\Support\Facades\Facade;
+use Illuminate\Turbine\Facades\Facade;
 use Support\Blink as TurbineBlink;
 
 /**

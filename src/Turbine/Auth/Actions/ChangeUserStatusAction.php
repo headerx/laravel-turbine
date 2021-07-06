@@ -4,7 +4,7 @@ namespace Turbine\Auth\Actions;
 
 use Turbine\Auth\Events\User\UserStatusChanged;
 use Turbine\Auth\Models\User;
-use Support\Exceptions\GeneralException;
+use Turbine\xceptions\GeneralException;
 
 class ChangeUserStatusAction
 {

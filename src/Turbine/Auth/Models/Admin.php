@@ -2,8 +2,8 @@
 
 namespace Turbine\Auth\Models;
 
-use Support\Concerns\CachesQueries;
-use Support\Concerns\HasParent;
+use Turbine\Concerns\CachesQueries;
+use Turbine\Concerns\HasParent;
 
 class Admin extends User
 {
