@@ -12,7 +12,6 @@ use Lab404\Impersonate\Models\Impersonate;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Passport\HasApiTokens;
-use Turbine\Menus\Concerns\HasMenuItems;
 use Spatie\Permission\Traits\HasRoles;
 use Turbine\Auth\Concerns\GetsAuthConnection;
 use Turbine\Auth\Concerns\HasPermissionsLabel;
@@ -24,6 +23,7 @@ use Turbine\Auth\QueryBuilders\UserQueryBuilder;
 use Turbine\Concerns\CachesQueries;
 use Turbine\Concerns\HasChildren;
 use Turbine\Concerns\HasUuid;
+use Turbine\Menus\Concerns\HasMenuItems;
 use Wildside\Userstamps\Userstamps;
 
 class User extends Authenticatable
